@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="page-result">
+    <nav class="navbar">
+        <div class="logo">MockPro<span> Result</span></div>
+        <div class="nav-links">
+            <a href="index.html">Back to Dashboard</a>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="result-header">
+            <h1 id="result-test-name">Test Result</h1>
+            <div class="final-score">Score: <span id="result-score">0</span> / <span id="result-total-marks">0</span>
+            </div>
+        </div>
+
+        <div class="grid-container" style="grid-template-columns: 1fr 1fr;">
+            <div class="card stat-card">
+                <h3>Overall Performance</h3>
+                <p>Accuracy: <strong id="res-accuracy">0%</strong></p>
+                <p>Attempted: <strong id="res-attempted">0</strong></p>
+                <p>Correct: <strong id="res-correct" style="color:var(--success)">0</strong></p>
+                <p>Incorrect: <strong id="res-incorrect" style="color:var(--danger)">0</strong></p>
+            </div>
+            <div class="card stat-card">
+                <h3>Section-wise Analysis</h3>
+                <canvas id="sectionChart" width="400" height="150"></canvas>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+            <h3>Question Breakdown</h3>
+            <div id="solution-container">
+                <!-- Solutions generated dynamically -->
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

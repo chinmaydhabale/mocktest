@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Mock Test Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="page-admin">
+    <nav class="navbar">
+        <div class="logo">MockPro<span> Admin</span></div>
+        <div class="nav-links">
+            <a href="index.html">Dashboard</a>
+            <a href="admin.html" class="active">Admin Panel</a>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="admin-grid">
+            <!-- Test Creation Box -->
+            <div class="card">
+                <h3>1. Upload Test Data (JSON)</h3>
+                <div class="form-group">
+                    <label>Test JSON File</label>
+                    <input type="file" id="json-upload" accept=".json">
+                </div>
+
+                <hr>
+                <h4>Bonus: CSV to JSON Converter</h4>
+                <textarea id="csv-input" placeholder="Question,Opt1,Opt2,Opt3,Opt4,Answer(1-4),Section"
+                    rows="4"></textarea>
+                <button class="btn" id="convert-csv">Convert & Apply</button>
+            </div>
+
+            <!-- Template Upload Box -->
+            <div class="card">
+                <h3>2. Setup UI Template (HTML)</h3>
+                <div class="form-group">
+                    <label>Select Saved Template</label>
+                    <select id="saved-templates-dropdown">
+                        <option value="">-- Default Template --</option>
+                        <!-- Saved templates injected here -->
+                    </select>
+                </div>
+                <hr style="margin: 10px 0;">
+                <div class="form-group">
+                    <label>Or Upload New HTML File</label>
+                    <input type="file" id="html-upload" accept=".html">
+                </div>
+                <div class="form-group row-checkbox" style="margin-bottom: 10px;">
+                    <input type="checkbox" id="save-template-check"> <label>Save this template to Library</label>
+                </div>
+                <div class="form-group hidden" id="template-name-group">
+                    <input type="text" id="new-template-name" placeholder="Enter Template Name (e.g. IBPS UI)">
+                </div>
+
+                <textarea id="html-preview" rows="3" readonly placeholder="Template Code Preview"></textarea>
+            </div>
+
+            <!-- Settings Box -->
+            <div class="card full-width">
+                <h3>3. Test Configuration & Save</h3>
+                <div class="config-grid">
+                    <div class="form-group">
+                        <label>Total Duration (Minutes)</label>
+                        <input type="number" id="cfg-duration" value="60">
+                    </div>
+                    <div class="form-group">
+                        <label>Marks per Question</label>
+                        <input type="number" id="cfg-marks" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Negative Marking</label>
+                        <input type="number" id="cfg-negative" value="0.25" step="0.01">
+                    </div>
+
+                    <div class="form-group row-checkbox">
+                        <input type="checkbox" id="cfg-shuffle"> <label>Shuffle Questions & Options</label>
+                    </div>
+                    <div class="form-group row-checkbox">
+                        <input type="checkbox" id="cfg-strict"> <label>Enable Tab Switch Warning</label>
+                    </div>
+                    <div class="form-group row-checkbox">
+                        <input type="checkbox" id="cfg-q-timer"> <label>Show Per-Question Timer</label>
+                    </div>
+                    <div class="form-group row-checkbox">
+                        <input type="checkbox" id="cfg-sec-timing"> <label>Enable IBPS Sectional Timing (Strict)</label>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="save-test-btn" style="width:100%; margin-top:15px;">Save & Publish
+                    Test</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

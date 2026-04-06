@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Exam Environment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="page-test">
+    <div class="exam-wrapper">
+        <!-- Exam Header -->
+        <header class="exam-header">
+            <div class="exam-title" id="live-test-name">Loading Test...</div>
+            <div class="exam-timer">
+                Time Left: <span id="timer-display">00:00:00</span>
+            </div>
+        </header>
+
+        <!-- Exam Layout Split -->
+        <div class="exam-layout">
+            <!-- Left: Question Area -->
+            <div class="exam-left">
+                <div class="section-tabs" id="section-tabs">
+                    <!-- Sections injected here -->
+                </div>
+
+                <div class="question-container">
+                    <!-- PER QUESTION TIMER TARGET -->
+                    <div id="q-timer-wrapper" class="q-timer-box hidden">
+                        ⏱️ Time on this Question: <span id="q-timer-display">00:00</span>
+                    </div>
+
+                    <!-- TEMPLATE INJECTION TARGET -->
+                    <div id="exam-render-area">
+                        <!-- Custom HTML templates map here -->
+                    </div>
+                </div>
+
+                <div class="exam-actions">
+                    <div>
+                        <button class="btn btn-outline" id="btn-mark">Mark for Review & Next</button>
+                        <button class="btn btn-outline" id="btn-clear">Clear Response</button>
+                    </div>
+                    <div>
+                        <button class="btn" id="btn-prev">Previous</button>
+                        <button class="btn btn-primary" id="btn-next">Save & Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Palette Area -->
+            <div class="exam-right">
+                <div class="candidate-info">
+                    <img src="https://via.placeholder.com/50" alt="Candidate">
+                    <div>
+                        <strong>Candidate</strong><br>
+                        <span id="live-subject">All Sections</span>
+                    </div>
+                </div>
+
+                <div class="palette-legend">
+                    <div class="legend-item"><span class="badge answered">0</span> Answered</div>
+                    <div class="legend-item"><span class="badge not-answered">0</span> Not Answered</div>
+                    <div class="legend-item"><span class="badge not-visited">0</span> Not Visited</div>
+                    <div class="legend-item"><span class="badge marked">0</span> Marked</div>
+                </div>
+
+                <div class="palette-grid" id="palette-grid">
+                    <!-- Question numbers injected here -->
+                </div>
+
+                <button class="btn btn-danger submit-btn" id="btn-submit">Submit Test</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab Switch Warning Overlay -->
+    <div id="warning-overlay" class="overlay hidden">
+        <div class="overlay-box">
+            <h3>Warning!</h3>
+            <p>You switched tabs. This is recorded. Further violations may auto-submit your test.</p>
+            <button class="btn btn-primary"
+                onclick="document.getElementById('warning-overlay').classList.add('hidden')">Continue Test</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

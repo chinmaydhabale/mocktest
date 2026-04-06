@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Test Platform - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="page-dashboard">
+    <nav class="navbar">
+        <div class="logo">MockPro<span>.</span></div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Dashboard</a>
+            <a href="admin.html">Admin Panel</a>
+            <button id="theme-toggle">🌙 Dark Mode</button>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="header-action">
+            <h2>Available Tests</h2>
+            <div id="user-stats">Overall Accuracy: <span id="overall-accuracy">0</span>% | Tests Taken: <span
+                    id="total-tests-taken">0</span></div>
+        </div>
+
+        <div id="test-list" class="grid-container">
+            <!-- Tests injected dynamically -->
+        </div>
+
+        <h2 style="margin-top: 40px;">Test History</h2>
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Test Name</th>
+                    <th>Score</th>
+                    <th>Accuracy</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="history-list">
+                <!-- History injected dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
